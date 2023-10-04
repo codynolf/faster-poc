@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+{
+	"name": "faster-poc",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:0-7.0",
+	"customizations":
+    {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csdevkit",
+				"patcx.vscode-nuget-gallery",
+                "GitHub.copilot",
+                "nick-rudenko.back-n-forth",
+                "vscode-icons-team.vscode-icons"
+            ],
+            "settings": {
+                "workbench.colorTheme": "Visual Studio 2019 Dark",
+                "workbench.iconTheme": "vscode-icons",
+                "workbench.preferredDarkColorTheme": "Default Dark Modern"
+            }
+        }
+    },
+    "containerEnv": { 
+		"GIT_EMAIL": "codynolf@outlook.com",
+		"GIT_USER": "Cody Nolf"
+	},
+	"remoteUser": "root",
+    "postCreateCommand": "git config --global user.email \"$GIT_EMAIL\" && git config --global user.name \"$GIT_USER\" && dotnet restore && dotnet dev-certs https --trust "
+}
