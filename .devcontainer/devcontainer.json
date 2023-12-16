@@ -1,8 +1,6 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
 {
 	"name": "faster-poc",
-	"image": "mcr.microsoft.com/devcontainers/dotnet:0-7.0",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
 	"customizations":
     {
         "vscode": {
@@ -10,7 +8,6 @@
                 "ms-dotnettools.csdevkit",
 				"patcx.vscode-nuget-gallery",
                 "GitHub.copilot",
-                "nick-rudenko.back-n-forth",
                 "vscode-icons-team.vscode-icons"
             ],
             "settings": {
@@ -20,6 +17,9 @@
             }
         }
     },
+    "mounts": [
+		"type=bind,source=/home/${localEnv:USER}/.ssh,target=/root/.ssh,readonly"
+	],
     "containerEnv": { 
 		"GIT_EMAIL": "codynolf@outlook.com",
 		"GIT_USER": "Cody Nolf"
